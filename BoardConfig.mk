@@ -33,12 +33,18 @@ TARGET_BOOTLOADER_BOARD_NAME := m11q
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
+TARGET_KERNEL_ARCH := arm64
+BOARD_KERNEL_BASE := 0x80000000
+BOARD_RAMDISK_OFFSET := 0x02000000
+BOARD_TAGS_OFFSET := 0x01e00000
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_CMDLINE := console=null androidboot.console=ttyMSM0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.usbconfigfs=true loop.max_part=7 printk.devkmsg=on
-BOARD_KERNEL_BASE := 0x0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET)
 
 # Kernel config
 TARGET_KERNEL_SOURCE := kernel/samsung/m11q
+TARGET_KERNEL_CONFIG := m11q_defconfig
 
 # fix this up by examining /proc/mtd on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432 #25

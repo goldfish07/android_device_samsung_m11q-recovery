@@ -80,3 +80,4 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery.fstab
 
 # filesystem
 TARGET_USES_MKE2FS:=true
+include $(LOCAL_PATH)/twrp.mk

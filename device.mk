@@ -16,10 +16,3 @@
 LOCAL_PATH := device/samsung/m11q
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-
-
-# Call the proprietary setup
-$(call inherit-product, vendor/samsung/m11q/m11q-vendor.mk)
-

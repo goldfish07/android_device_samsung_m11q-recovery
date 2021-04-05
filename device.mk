@@ -16,3 +16,12 @@
 LOCAL_PATH := device/samsung/m11q
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
+
+# Boot control HAL
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-service \
+    android.hardware.boot@1.0-impl-wrapper.recovery \
+    android.hardware.boot@1.0-impl-wrapper \
+    android.hardware.boot@1.0-impl.recovery 

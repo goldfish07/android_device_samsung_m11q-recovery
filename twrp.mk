@@ -12,8 +12,6 @@ TW_CUSTOM_BATTERY_PATH := "/sys/devices/battery/power_supply/battery"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone1/temp"
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_FBE := true
 
 TW_EXCLUDE_SUPERSU := true
 TW_INCLUDE_NTFS_3G := true
@@ -33,5 +31,10 @@ TW_EXCLUDE_TWRPAPP := true
 
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
+
+# Crypto
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
 
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/recovery.fstab:recovery/root/etc/recovery.fstab

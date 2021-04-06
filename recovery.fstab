@@ -32,9 +32,8 @@
 /super            ext4      /dev/block/bootdevice/by-name/super                flags=backup=0;display="super"
 /super_image      ext4      /dev/block/bootdevice/by-name/super                flags=backup=0;flashimg=1;display="Super Image"
 
-/system		      ext4	    /dev/block/mapper/system                           flags=backup=0;display="System";subpartitionof=/super;
+/system_root      ext4   	/dev/block/mapper/system                           flags=backup=0;display="System";subpartitionof=/super;
 /system_image     emmc      /dev/block/mapper/system                           flags=backup=1;display="System Image"flashimg=1;subpartitionof=/super_image;
-/system_root      ext4   	/dev/block/mapper/system                           flags=backup=0;display="System Root";subpartitionof=/super;
 
 /vendor           ext4      /dev/block/mapper/vendor                           flags=backup=0;display="Vendor";wipeingui;subpartitionof=/super
 /vendor_image     emmc      /dev/block/mapper/vendor                           flags=backup=1;display="Vendor Image";flashimg=1;subpartitionof=/super_image

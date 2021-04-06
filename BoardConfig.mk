@@ -45,14 +45,33 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8953
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-TARGET_KERNEL_ARCH := arm64
 BOARD_KERNEL_BASE := 0x80000000
+BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_RAMDISK_OFFSET := 0x02000000
+BOARD_SECOND_OFFSET := 0x00f00000
 BOARD_TAGS_OFFSET := 0x01e00000
+BOARD_HEADER_VERSION := 2
+BOARD_RECOVERY_DTBO_SIZE := 2347796
+BOARD_RECOVERY_DTBO_OFFSET := 21106688
+BOARD_HEADER_SIZE := 1660
+BOARD_DTB_SIZE := 859398
+BOARD_DTB_OFFSET := 0x101f00000
+
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_CMDLINE := console=null androidboot.console=ttyMSM0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.usbconfigfs=true loop.max_part=7 printk.devkmsg=on
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET)
+BOARD_BOOT_HEADER_VERSION := 2
+BOARD_MKBOOTIMG_ARGS += \
+	--base $(BOARD_KERNEL_BASE) \
+	--pagesize $(BOARD_KERNEL_PAGESIZE) \
+	--ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
+	--tags_offset $(BOARD_TAGS_OFFSET) \
+	--kernel_offset $(BOARD_KERNEL_OFFSET) \
+	--second_offset $(BOARD_SECOND_OFFSET) \
+	--dtb_offset $(BOARD_DTB_OFFSET) \
+	--dtbsize $(BOARD_DTB_SIZE) \
+	--header_version $(BOARD_HEADER_VERSION) \
+	--headersize $(BOARD_HEADER_SIZE) 
 
 # Kernel config
 TARGET_KERNEL_SOURCE := kernel/samsung/m11q

@@ -35,3 +35,22 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
+
+# Disable adb security
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+	ro.mount.fs=EXT4 \
+	ro.allow.mock.location=0 \
+	ro.debuggable=1 \
+	ro.config.low_ram=false
+
+# For userdebug builds
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+	ro.secure=0 \
+	ro.adb.secure=0 \
+	persist.sys.root_access=1 \
+	persist.service.adb.enable=1
+
+
+# MTP
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+	persist.sys.usb.config=mtp,adb

@@ -56,11 +56,14 @@ BOARD_RECOVERY_DTBO_OFFSET := 21106688
 BOARD_HEADER_SIZE := 1660
 BOARD_DTB_SIZE := 859398
 BOARD_DTB_OFFSET := 0x101f00000
-
+BOARD_PREBUILT_DTBIMAGE_DIR := $(LOCAL_PATH)/prebuilt
+TARGET_PREBUILT_DTB := $(LOCAL_PATH)/prebuilt/m11q-dtb
+BOARD_PREBUILT_DTBOIMAGE := $(LOCAL_PATH)/prebuilt/m11q-dtbo
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_CMDLINE := console=null androidboot.console=ttyMSM0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.usbconfigfs=true loop.max_part=7 printk.devkmsg=on
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_BOOT_HEADER_VERSION := 2
+
 BOARD_MKBOOTIMG_ARGS += \
 	--base $(BOARD_KERNEL_BASE) \
 	--pagesize $(BOARD_KERNEL_PAGESIZE) \
@@ -69,9 +72,8 @@ BOARD_MKBOOTIMG_ARGS += \
 	--kernel_offset $(BOARD_KERNEL_OFFSET) \
 	--second_offset $(BOARD_SECOND_OFFSET) \
 	--dtb_offset $(BOARD_DTB_OFFSET) \
-	--dtbsize $(BOARD_DTB_SIZE) \
 	--header_version $(BOARD_HEADER_VERSION) \
-	--headersize $(BOARD_HEADER_SIZE) 
+	--dtb $(TARGET_PREBUILT_DTB) 
 
 # Kernel config
 TARGET_KERNEL_SOURCE := kernel/samsung/m11q
@@ -131,6 +133,8 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_OTA_ASSERT_DEVICE := m11q
 
 # Recovery
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"

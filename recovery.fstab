@@ -30,7 +30,7 @@
 /recovery         emmc      /dev/block/bootdevice/by-name/recovery             flags=backup=1
 
 /super            ext4      /dev/block/bootdevice/by-name/super                flags=backup=0;display="super"
-/super_image      ext4      /dev/block/bootdevice/by-name/super                flags=backup=0;flashimg=1;display="Super Image"
+/super_image      emmc      /dev/block/bootdevice/by-name/super                flags=backup=0;flashimg=1;display="Super Image"
 
 /system_root      ext4   	/dev/block/mapper/system                           flags=backup=0;display="System";subpartitionof=/super;
 /system_image     emmc      /dev/block/mapper/system                           flags=backup=1;display="System Image"flashimg=1;subpartitionof=/super_image;
@@ -39,7 +39,7 @@
 /vendor_image     emmc      /dev/block/mapper/vendor                           flags=backup=1;display="Vendor Image";flashimg=1;subpartitionof=/super_image
 
 /odm              ext4      /dev/block/mapper/odm                              flags=backup=0;display="Odm";wipeingui;subpartitionof=/super
-/odm_image        ext4      /dev/block/mapper/odm                              flags=backup=1;display="Odm Image";flashimg=1;subpartitionof=/super_image
+/odm_image        emmc      /dev/block/mapper/odm                              flags=backup=1;display="Odm Image";flashimg=1;subpartitionof=/super_image
 
 
 /preload          ext4      /dev/block/bootdevice/by-name/hidden               flags=display="Preload"               

@@ -29,17 +29,17 @@
 /boot             emmc      /dev/block/bootdevice/by-name/boot                 flags=backup=1
 /recovery         emmc      /dev/block/bootdevice/by-name/recovery             flags=backup=1
 
-/super            ext4      /dev/block/bootdevice/by-name/super                flags=backup=0;display="super"
-/super_image      emmc      /dev/block/bootdevice/by-name/super                flags=backup=0;flashimg=1;display="Super Image"
+/super            ext4      /dev/block/bootdevice/by-name/super                flags=backup=0;display="Super"
+/super_image      emmc      /dev/block/bootdevice/by-name/super                flags=backup=0;flashimg=1;
 
 /system_root      ext4   	/dev/block/mapper/system                           flags=backup=0;display="System";subpartitionof=/super;
-/system_image     emmc      /dev/block/mapper/system                           flags=backup=1;display="System Image"flashimg=1;subpartitionof=/super_image;
+/system_image     emmc      /dev/block/mapper/system                           flags=backup=1;flashimg=1;subpartitionof=/super_image;
 
 /vendor           ext4      /dev/block/mapper/vendor                           flags=backup=0;display="Vendor";wipeingui;subpartitionof=/super
-/vendor_image     emmc      /dev/block/mapper/vendor                           flags=backup=1;display="Vendor Image";flashimg=1;subpartitionof=/super_image
+/vendor_image     emmc      /dev/block/mapper/vendor                           flags=backup=1;flashimg=1;subpartitionof=/super_image
 
 /odm              ext4      /dev/block/mapper/odm                              flags=backup=0;display="Odm";wipeingui;subpartitionof=/super
-/odm_image        emmc      /dev/block/mapper/odm                              flags=backup=1;display="Odm Image";flashimg=1;subpartitionof=/super_image
+/odm_image        emmc      /dev/block/mapper/odm                              flags=backup=1;flashimg=1;subpartitionof=/super_image
 
 
 /preload          ext4      /dev/block/bootdevice/by-name/hidden               flags=display="Preload"               

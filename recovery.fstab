@@ -41,6 +41,8 @@
 /odm              ext4      /dev/block/mapper/odm                              flags=backup=0;display="Odm";wipeingui;subpartitionof=/super
 /odm_image        emmc      /dev/block/mapper/odm                              flags=backup=1;flashimg=1;subpartitionof=/super_image
 
+/product          ext4      /dev/block/mapper/product                          flags=backup=0;display="Product";wipeingui;subpartitionof=/super
+/product_image    emmc      /dev/block/mapper/product                          flags=backup=1;flashimg=1;subpartitionof=/super_image
 
 /preload          ext4      /dev/block/bootdevice/by-name/hidden               flags=display="Preload"               
 /data             f2fs      /dev/block/bootdevice/by-name/userdata             flags=encryptable=footer,length=-16384

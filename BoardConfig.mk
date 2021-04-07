@@ -103,9 +103,6 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
 
-# system as root
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
-
 # Android Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_VBMETA_ARGS=--padding_size 4096

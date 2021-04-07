@@ -44,7 +44,6 @@
 /product          ext4      /dev/block/mapper/product                          flags=backup=0;display="Product";wipeingui;subpartitionof=/super
 /product_image    emmc      /dev/block/mapper/product                          flags=backup=1;flashimg=1;subpartitionof=/super_image
 
-/preload          ext4      /dev/block/bootdevice/by-name/hidden               flags=display="Preload"               
 /data             f2fs      /dev/block/bootdevice/by-name/userdata             flags=encryptable=footer,length=-16384
 /cache            ext4      /dev/block/bootdevice/by-name/cache                display="cache"
 /efs              ext4      /dev/block/bootdevice/by-name/efs                  flags=backup=1;display=EFS

@@ -17,6 +17,9 @@ LOCAL_PATH := device/samsung/m11q
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
+# Define Dynamic Partition support
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_BUILD_SUPER_PARTITION := false
 
 # Boot control HAL
 PRODUCT_PACKAGES += \

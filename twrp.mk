@@ -1,6 +1,4 @@
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/soc/7000000.ssusb/7000000.dwc3/gadget/lun%d/file"
-TARGET_HW_DISK_ENCRYPTION := true
-TARGET_CRYPTFS_HW_PATH := "vendor/qcom/opensource/cryptfs_hw"
 
 RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi

@@ -13,10 +13,10 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_m11q.mk
+    $(LOCAL_DIR)/twrp_m11q.mk
 
 
 COMMON_LUNCH_CHOICES := \
-     lineage_m11q-userdebug \
-     lineage_m11q-eng \
-     lineage_m11q-user
+     twrp_m11q-userdebug \
+     twrp_m11q-eng \
+     twrp_m11q-user
